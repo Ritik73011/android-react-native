@@ -1,7 +1,7 @@
 import { View, Text, StyleSheet } from "react-native";
 const ClickEvent = () => {
   return (
-    <View>
+    <View style={style.container}>
       <Text>onClick</Text>
     </View>
   );
