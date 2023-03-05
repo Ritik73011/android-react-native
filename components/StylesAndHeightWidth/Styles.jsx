@@ -1,5 +1,5 @@
 import { StyleSheet, View, TextInput } from "react-native";
-const Styles = () => {
+const Styles = ({ route }) => {
   return (
     <>
       <View style={styles.parent}>
@@ -10,7 +10,10 @@ const Styles = () => {
       <View style={styles.parent2}>
         <View style={styles.view1}></View>
         <View style={styles.view2}>
-          <TextInput placeholder="Your good name" style={styles.inputBox} />
+          <TextInput
+            placeholder={route.params.placeholder}
+            style={styles.inputBox}
+          />
         </View>
         <View style={styles.view3}></View>
       </View>
