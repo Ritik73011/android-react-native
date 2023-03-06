@@ -10,6 +10,7 @@ import {
   TouchableWithoutFeedback,
   Alert,
 } from 'react-native';
+import FlatLists from './components/FlatLists/FlatLists';
 
 const Stack = createNativeStackNavigator();
 export default function App() {
@@ -25,6 +26,10 @@ export default function App() {
           component={Styles}
           options={{ title: "own styles" }} />
 
+        <Stack.Screen name='flat'
+          component={FlatLists}
+          options={{ title: "Flat-List" }} />
+
       </Stack.Navigator>
     </NavigationContainer>
   );
@@ -35,6 +40,10 @@ const Home = ({ navigation }) => {
     <Button
       title='Styles'
       onPress={() => { navigation.navigate('style', { placeholder: "Your good name..." }) }} />
+    <Button
+      title='FlatList'
+      onPress={() => { navigation.navigate('flat') }} />
+
     <View style={{ flex: 1, flexDirection: "column", justifyContent: "space-between", alignItems: "center" }}>
       <TouchableHighlight onPress={() => Alert.alert("TouchableHighlight")}>
         <View style={{ backgroundColor: "pink", padding: 10 }}>
